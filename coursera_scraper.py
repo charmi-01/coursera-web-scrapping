@@ -24,7 +24,9 @@ def scraper(page):
     driver.quit()
 
     soup = BeautifulSoup(res, 'lxml')
-    c_link = soup.findAll('a', {'class':'c-directory-link'}, href=True)
+    c_link = soup.findAll('a', {'class':'cds-119 cds-113 cds-115 css-seqyon cds-142'}, href=True)
+    print(f"Page no {page}")
+    print("C_link--->",c_link )
 
     for c in c_link:
         lst_name.append(c.getText())
